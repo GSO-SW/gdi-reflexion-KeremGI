@@ -21,7 +21,27 @@ Ergänzen Sie hier die notwendigen Code-Ausschnitte, um zu zeigen, wie man es ma
 - Die folgende Liste kann gerne ergänzt werden :)
 
 ### Bewegung animieren
+Die Bewegung wird in ein eigenen Event codiert. 
+Aufbau eines Events ist ganz simple
+private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
+{
+}
+In diesem Event wird alles Beschrieben was alles während das laufende Programm passiert mit der Tastatur.
+In unserem Fall wie beim Frogger haben wir verhindert durch if abfragen das der Spieler nicht außerhalb des feldes laufen kann.
+if(e.KeyCode == Keys.Down) 
+{
+    if ((spieler.Y - hoeheJeBereich) > -43 && (spieler.Y - hoeheJeBereich) < 252)
+    {
+        spieler.Y = spieler.Y + hoeheJeBereich;
+    }
+}
+In diesem Beispiel wird überprüft das der Spieler nicht außerhalb des Spielfeldes laufen kann bzw. oben und unten.
+Genau in diesem schema braucht man auch weitere für rechts, links und oben.
 
+###(object sender, EventArgs e)
+Das erste Argument, das das Objekt des Senders repräsentiert, ist wichtig, weil es dem Event-Handler ermöglicht, zu identifizieren, welches Steuerelement oder welche Komponente das Event ausgelöst hat. Das kann nützlich sein, um spezifische Aktionen basierend auf dem Ursprung des Events durchzuführen.
+
+Das zweite Argument, das EventArgs-Objekt, wird verwendet, um zusätzliche Informationen über das Event zu übermitteln. In einigen Fällen kann dies null sein, wenn keine zusätzlichen Informationen benötigt werden. Aber oft gibt es spezialisierte EventArgs-Klassen, die spezifische Daten über das Event tragen.
 ### Objekte mit Tasten steuern
 
 ### Verhindern, dass ein Spieler aus dem Bild läuft
