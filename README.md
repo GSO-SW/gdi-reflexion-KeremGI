@@ -36,7 +36,8 @@ Ergänzen Sie hier die notwendigen Code-Ausschnitte, um zu zeigen, wie man es ma
 -         spieler.Y = spieler.Y + hoeheJeBereich;
 -     }
 - }
-  
+
+### Verhindern, dass ein Spieler aus dem Bild läuft
 - In diesem Beispiel wird überprüft das der Spieler nicht außerhalb des Spielfeldes laufen kann bzw. oben und unten.
 - Genau in diesem schema braucht man auch weitere für rechts, links und oben.
 
@@ -47,12 +48,40 @@ Das zweite Argument, das EventArgs-Objekt, wird verwendet, um zusätzliche Infor
 
 ## Bewegung animieren
 
-### Verhindern, dass ein Spieler aus dem Bild läuft
+- foreach (Hindernis aktuellesHindernis in alleHindernisse)
+- {
+    
+-     aktuellesHindernis.Move();
+- }
+- In diesem Beispiel werden die Hindernise gespawnt und bewegen sich durch die Methode.
+- In der Klasse Hindernis wird dann genau beschrieben wie und wann das Hindernis sich beweget.
 
+- {
+-     if ((spieler.Y - hoeheJeBereich) > -43 && (spieler.Y - hoeheJeBereich) < 252)
+-     {
+-         spieler.Y = spieler.Y + hoeheJeBereich;
+-     }
+- }
+- Hier wird beschrieben wie der Spieler sich bewegen soll.
 ### Spiel pausieren
+
+- if(e.KeyCode == Keys.Space)  <--- Tastendruck-Leertaste
+- { 
+-   if(tmrGameTick.Enabled == true ) <--- Spielzeit == wahrheit 
+-   {
+-       tmrGameTick.Enabled = false; <--- Spielzeit wird gestoppt 
+-       return;
+-   }
+-   else 
+-   {
+-       tmrGameTick.Enabled = true;
+-   }
+       
+- }
 
 ### Ihr schönstes Ergebnis
 
+- Habe nichts besonderes....
 
 
 
