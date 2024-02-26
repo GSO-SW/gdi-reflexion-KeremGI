@@ -23,19 +23,22 @@ Ergänzen Sie hier die notwendigen Code-Ausschnitte, um zu zeigen, wie man es ma
 ## Objekte mit Tasten steuern
 - Die Bewegung wird in ein eigenen Event codiert. 
 - Aufbau eines Events ist ganz simple
-- private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
-- {
-- }
-  
+```
+private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
+{
+}
+```  
 - In diesem Ereignis wird beschrieben, was während des laufenden Programms mit der Tastatur passiert.
 - In unserem Fall wie beim Frogger haben wir verhindert durch if abfragen das der Spieler nicht außerhalb des feldes laufen kann.
-- if(e.KeyCode == Keys.Down) 
-- {
--     if ((spieler.Y - hoeheJeBereich) > -43 && (spieler.Y - hoeheJeBereich) < 252)
--     {
--         spieler.Y = spieler.Y + hoeheJeBereich;
--     }
-- }
+```
+if(e.KeyCode == Keys.Down) 
+{
+    if ((spieler.Y - hoeheJeBereich) > -43 && (spieler.Y - hoeheJeBereich) < 252)
+    {
+        spieler.Y = spieler.Y + hoeheJeBereich;
+    }
+}
+```
 
 ### Verhindern, dass ein Spieler aus dem Bild läuft
 - In diesem Beispiel wird überprüft das der Spieler nicht außerhalb des Spielfeldes laufen kann bzw. oben und unten.
